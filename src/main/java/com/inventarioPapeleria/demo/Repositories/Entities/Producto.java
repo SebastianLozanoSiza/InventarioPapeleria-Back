@@ -1,5 +1,7 @@
 package com.inventarioPapeleria.demo.Repositories.Entities;
 
+import java.util.Date;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -30,6 +32,8 @@ public class Producto {
     private Double precioCompra;
 
     private Double precioVenta;
+
+    private Date fechaRegistro;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_categoria", nullable = false)

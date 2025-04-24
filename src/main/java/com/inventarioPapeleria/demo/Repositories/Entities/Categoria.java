@@ -6,6 +6,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.PrePersist;
 import jakarta.persistence.Table;
 import lombok.Data;
 
@@ -21,4 +22,9 @@ public class Categoria {
     private String nombre;
 
     private Date fechaRegistro;
+
+    @PrePersist
+    protected void onCreate(){
+        this.fechaRegistro = new Date();
+    }
 }
