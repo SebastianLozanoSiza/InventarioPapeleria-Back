@@ -9,7 +9,7 @@ import com.inventarioPapeleria.demo.Repositories.Entities.Categoria;
 
 public interface RepositoryCategoria extends CrudRepository<Categoria,Long>{
     
-    @Query("SELECT c FROM Categoria c ORDER BY c.id ASC")
+    @Query("SELECT c FROM Categoria c ORDER BY c.idCategoria ASC")
     List<Categoria> findAllOrdered();
 
     boolean existsByNombre(String nombre);
